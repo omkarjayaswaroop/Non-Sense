@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Non-Sense</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockSense | Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome to the Non-Sense</h1>
-    <p>Our website is under development.</p>
+<div id="auth-screen" class="auth-screen"></div>
+<div class="app is-hidden">
+    <aside class="sidebar">
+        <div class="logo"><h1>StockSense</h1><p>Inventory Management</p></div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link active" data-page="dashboard"><span>▣</span><span>Dashboard</span></a>
+            <a href="#" class="nav-link" data-page="products"><span>□</span><span>Products</span></a>
+            <div class="nav-section"><p>OPERATIONS</p>
+                <a href="#" class="nav-link" data-page="receipts"><span>↓</span><span>Receipts</span></a>
+                <a href="#" class="nav-link" data-page="deliveries"><span>↑</span><span>Deliveries</span></a>
+                <a href="#" class="nav-link" data-page="transfers"><span>↔</span><span>Transfers</span></a>
+                <a href="#" class="nav-link" data-page="adjustments"><span>±</span><span>Adjustments</span></a>
+                <a href="#" class="nav-link" data-page="move-history"><span>≡</span><span>Move History</span></a>
+            </div>
+            <a href="#" class="nav-link" data-page="ledger"><span>▤</span><span>Stock Ledger</span></a>
+            <a href="#" class="nav-link" data-page="alerts"><span>!</span><span>Alerts</span><span class="alert-count" id="sidebar-alert-count">0</span></a>
+            <a href="#" class="nav-link" data-page="warehouses"><span>⌂</span><span>Warehouses</span></a>
+            <a href="#" class="nav-link" data-page="settings"><span>⚙</span><span>Settings</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-link" data-page="profile"><span>◉</span><span>My Profile</span></a>
+            <a href="#" class="nav-link" id="logout-link"><span>↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div><h2 id="page-title">Dashboard</h2><p id="page-subtitle">Overview of your inventory operations</p></div>
+            <div class="topbar-actions">
+                <div class="search-box"><input id="global-search" type="text" placeholder="Search products, SKU..."></div>
+                <button class="notification-button" id="header-alert-button" title="Open alerts">🔔<span class="notification-dot"></span></button>
+                <div class="profile"><div class="profile-avatar">OJ</div><div><strong>Omkar</strong><span>Inventory Manager</span></div></div>
+            </div>
+        </header>
+
+        <div id="app-page"></div>
+    </main>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal-box">
+        <div class="modal-header"><div><h2 id="modal-title"></h2><p id="modal-subtitle"></p></div><button class="modal-close" id="modal-close">×</button></div>
+        <div id="modal-content"></div>
+    </div>
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
